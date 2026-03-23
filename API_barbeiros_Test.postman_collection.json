@@ -1,0 +1,183 @@
+{
+	"info": {
+		"name": "API_barbeiro_Test",
+		"description": "Testes de todas as operações do CRUD de Barbeiros (Express + better-sqlite3)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Listar Todos os Barbeiros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/barbeiros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"barbeiros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Filtrar por Especialidade",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/barbeiros/filtrar?especialidade=Corte",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"barbeiros",
+						"filtrar"
+					],
+					"query": [
+						{
+							"key": "especialidade",
+							"value": "Corte"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Ordenar por Experiência",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/barbeiros/ordenar?por=experiencia_anos&ordem=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"barbeiros",
+						"ordenar"
+					],
+					"query": [
+						{
+							"key": "por",
+							"value": "experiencia_anos"
+						},
+						{
+							"key": "ordem",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Cadastrar Novo Barbeiro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Carlos Mendes\",\n    \"especialidade\": \"Navalhado\",\n    \"telefone\": \"11911112222\",\n    \"experiencia_anos\": 8\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/barbeiros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"barbeiros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Buscar Barbeiro por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/barbeiros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"barbeiros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Atualizar Barbeiro",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Marcos Silva Atualizado\",\n    \"especialidade\": \"Corte Clássico e Barba\",\n    \"telefone\": \"11988887777\",\n    \"experiencia_anos\": 11\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/barbeiros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"barbeiros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Deletar Barbeiro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/barbeiros/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"barbeiros",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
